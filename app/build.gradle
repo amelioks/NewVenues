@@ -45,8 +45,11 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$version_retrofit"
     implementation "com.squareup.retrofit2:converter-scalars:$version_retrofit"
 
-    //recyclerview
+    //recyclerView
     implementation "androidx.recyclerview:recyclerview:$version_recyclerview"
+
+    //viewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_viewmodel"
 
 
 }
