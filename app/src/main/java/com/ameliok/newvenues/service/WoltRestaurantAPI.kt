@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.network
+package com.ameliok.newvenues.service
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
