@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.data
+package com.ameliok.newvenues.data.model
 
 data class Section(
     val items: List<Item>,

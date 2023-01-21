@@ -1,6 +1,11 @@
-package com.ameliok.newvenues.data
+package com.ameliok.newvenues.data.response
 
-data class VenuesProperty(
+import com.ameliok.newvenues.data.model.Created
+import com.ameliok.newvenues.data.model.Filtering
+import com.ameliok.newvenues.data.model.Section
+import com.ameliok.newvenues.data.model.SortingX
+
+data class GetRestaurantsResponse(
     val created: Created,
     val expires_in_seconds: Int,
     val filtering: Filtering,

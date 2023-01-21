@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.data
+package com.ameliok.newvenues.data.model
 
 data class Image(
     val blurhash: String,
