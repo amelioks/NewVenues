@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/restaurant_list"
+            android:id="@+id/restaurant_recycler"
             android:layout_width="@dimen/spacing_0dp"
             android:layout_height="@dimen/spacing_0dp"
             tools:listitem="@layout/restaurant_list"
