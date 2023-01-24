@@ -1,6 +1,6 @@
 package com.ameliok.newvenues
 
-import com.ameliok.newvenues.data.response.GetRestaurantsResponse
+import com.ameliok.newvenues.data.model.Item
 import com.ameliok.newvenues.service.WoltVenueService
 
 class RestaurantRepository(
@@ -9,8 +9,8 @@ class RestaurantRepository(
     suspend fun getRestaurant(
         lat: Double,
         lon: Double
-    ): GetRestaurantsResponse {
-        return service.getWoltVenue(lat, lon)
+    ): List<Item> {
+        return service.getWoltVenue(lat, lon).sections[1].items
     }
 
 }
