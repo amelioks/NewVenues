@@ -5,6 +5,7 @@ buildscript {
         version_retrofit = '2.9.0'
         version_recyclerview = '1.2.1'
         version_lifecycle = '2.5.1'
+        version_glide = '4.14.2'
     }
 }
 
