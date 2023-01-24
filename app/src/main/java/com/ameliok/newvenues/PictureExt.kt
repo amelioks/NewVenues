@@ -11,6 +11,3 @@ fun ImageView.setImageUrl(imgUrl: String?) {
         .load(imgUrl)
         .into(this)
 }
-
-fun ImageView.setRestaurantIconUrl(iconCode: String?) =
-    setImageUrl("https://prod-wolt-venue-images-cdn.wolt.com/$iconCode.jpg")
