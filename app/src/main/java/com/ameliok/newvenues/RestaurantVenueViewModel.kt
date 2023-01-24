@@ -3,12 +3,25 @@ package com.ameliok.newvenues
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ameliok.newvenues.data.response.GetRestaurantsResponse
+import androidx.lifecycle.viewModelScope
+import com.ameliok.newvenues.data.model.Item
+import kotlinx.coroutines.launch
 
 class RestaurantVenueViewModel(
     private val repository: RestaurantRepository
 ) : ViewModel() {
 
-    private val _getRestaurantResult = MutableLiveData<GetRestaurantsResponse>()
-    val getRestaurantResult: LiveData<GetRestaurantsResponse> get() = _getRestaurantResult
+    private val _getRestaurantResult = MutableLiveData<List<Item>>()
+    val getRestaurantResult: LiveData<List<Item>>
+        get() = _getRestaurantResult
+
+    init {
+        getRestaurants()
+    }
+
+    fun getRestaurants() = viewModelScope.launch {
+        _getRestaurantResult.value = repository.getRestaurant(60.170187, 24.930599)
+    }
+
+
 }
