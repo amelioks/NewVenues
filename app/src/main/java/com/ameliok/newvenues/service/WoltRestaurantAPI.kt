@@ -2,7 +2,7 @@ package com.ameliok.newvenues.service
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.converter.scalars.ScalarsConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 object ServiceBuilder {
@@ -13,7 +13,7 @@ object ServiceBuilder {
 
         return Retrofit.Builder()
             .client(okHttpClient)
-            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_ENDPOINT)
             .build()
             .create(serviceClass)
