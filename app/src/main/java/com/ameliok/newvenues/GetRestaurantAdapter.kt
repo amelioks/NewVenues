@@ -32,4 +32,5 @@ class GetRestaurantAdapter()
         val binding = RestaurantListBinding.inflate(layoutInflater, parent, false)
         return GetRestaurantViewHolder(binding)
     }
+
 }
