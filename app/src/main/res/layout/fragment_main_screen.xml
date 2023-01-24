@@ -20,9 +20,11 @@
             android:id="@+id/textView"
             android:layout_width="328dp"
             android:layout_height="36dp"
+            android:layout_marginTop="48dp"
             android:fontFamily="sans-serif"
             android:text="@string/new_venues"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
