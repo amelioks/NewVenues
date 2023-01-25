@@ -10,7 +10,7 @@ class RestaurantRepository(
         lat: Double,
         lon: Double
     ): List<Item> {
-        return service.getWoltVenue(lat, lon).sections[1].items
+        return service.getWoltVenue(lat, lon).sections[1].items.take(15)
     }
 
 }
