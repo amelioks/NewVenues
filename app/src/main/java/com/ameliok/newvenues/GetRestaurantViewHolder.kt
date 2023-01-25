@@ -13,7 +13,7 @@ class GetRestaurantViewHolder(val binding: RestaurantListBinding)
                 val restaurant = item.venue
                 binding.textViewRestaurantName.text = restaurant?.name
                 binding.textViewRestaurantDescription.text = restaurant?.short_description
-                binding.imageViewRestaurant.setRestaurantIconUrl(item.image.url)
+                binding.imageViewRestaurant.setImageUrl(item.image.url)
             }
         }
 }

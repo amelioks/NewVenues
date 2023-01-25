@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Amalia/AndroidStudioProjects/NewVenues/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Amalia/AndroidStudioProjects/NewVenues/app/src/main/res/layout/fragment_main_screen.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/Amalia/AndroidStudioProjects/NewVenues/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/Amalia/AndroidStudioProjects/NewVenues/app/src/main/res/layout/fragment_main_screen.xml" value="0.1" />
+        <entry key="..\:/Users/Amalia/AndroidStudioProjects/NewVenues/app/src/main/res/layout/restaurant_list.xml" value="0.1" />
       </map>
     </option>
   </component>
@@ -13,5 +14,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

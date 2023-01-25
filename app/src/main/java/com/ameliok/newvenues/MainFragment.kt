@@ -31,8 +31,6 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentMainScreenBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
-        binding.viewModel = viewModel
         return _binding?.root
     }
 
@@ -48,9 +46,10 @@ class MainFragment : Fragment() {
         }
     }
 
-    private fun setupView() {
+    private fun setupView(): View {
         binding.restaurantRecycler.adapter = adapter
         binding.restaurantRecycler.layoutManager = LinearLayoutManager(context)
+        return binding.root
     }
 
     override fun onDestroy() {
