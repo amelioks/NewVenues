@@ -12,5 +12,6 @@ data class Item(
     val template: String,
     val title: String,
     val track_id: String,
-    val venue: Venue?
+    val venue: Venue?,
+    var isFavorited: Boolean = false
 )

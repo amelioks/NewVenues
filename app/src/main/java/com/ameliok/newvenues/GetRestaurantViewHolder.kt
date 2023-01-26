@@ -14,6 +14,21 @@ class GetRestaurantViewHolder(val binding: RestaurantListBinding)
                 binding.textViewRestaurantName.text = restaurant?.name
                 binding.textViewRestaurantDescription.text = restaurant?.short_description
                 binding.imageViewRestaurant.setImageUrl(item.image.url)
+
+                var drawable = if (item.isFavorited) {
+                    R.drawable.baseline_favorite_black_20
+                }
+                else R.drawable.baseline_favorite_border_black_20
+
+                binding.imageViewFavoriteIcon.setImageResource(drawable)
+
+                binding.imageViewFavoriteIcon.setOnClickListener {
+                    item.isFavorited = !item.isFavorited
+
+                    if(item.isFavorited) binding.imageViewFavoriteIcon.setImageResource(R.drawable.baseline_favorite_black_20)
+                    else binding.imageViewFavoriteIcon.setImageResource(R.drawable.baseline_favorite_border_black_20)
+                }
             }
         }
+
 }
