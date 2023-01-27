@@ -1,9 +1,11 @@
-package com.ameliok.newvenues
+package com.ameliok.newvenues.UI
 
 
 import androidx.recyclerview.widget.RecyclerView
+import com.ameliok.newvenues.R
 import com.ameliok.newvenues.data.model.Item
 import com.ameliok.newvenues.databinding.RestaurantListBinding
+import com.ameliok.newvenues.setImageUrl
 
 class GetRestaurantViewHolder(val binding: RestaurantListBinding)
     : RecyclerView.ViewHolder(binding.root){

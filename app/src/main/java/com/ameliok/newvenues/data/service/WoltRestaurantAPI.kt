@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.service
+package com.ameliok.newvenues.data.service
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -1,4 +1,4 @@
-package com.ameliok.newvenues
+package com.ameliok.newvenues.UI
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

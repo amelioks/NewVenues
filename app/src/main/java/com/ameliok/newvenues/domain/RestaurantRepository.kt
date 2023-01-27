@@ -1,7 +1,7 @@
-package com.ameliok.newvenues
+package com.ameliok.newvenues.domain
 
 import com.ameliok.newvenues.data.model.Item
-import com.ameliok.newvenues.service.WoltVenueService
+import com.ameliok.newvenues.data.service.WoltVenueService
 
 class RestaurantRepository(
     private val service: WoltVenueService

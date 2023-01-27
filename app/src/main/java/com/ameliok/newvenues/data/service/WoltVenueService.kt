@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.service
+package com.ameliok.newvenues.data.service
 
 import com.ameliok.newvenues.data.response.GetRestaurantsResponse
 import retrofit2.http.GET

@@ -1,4 +1,4 @@
-package com.ameliok.newvenues
+package com.ameliok.newvenues.UI
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -12,9 +12,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ameliok.newvenues.domain.RestaurantRepository
 import com.ameliok.newvenues.databinding.FragmentMainScreenBinding
-import com.ameliok.newvenues.service.ServiceBuilder
-import com.ameliok.newvenues.service.WoltVenueService
+import com.ameliok.newvenues.data.service.ServiceBuilder
+import com.ameliok.newvenues.data.service.WoltVenueService
+import com.ameliok.newvenues.fineAndCoarseLocationPermissionGranted
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
