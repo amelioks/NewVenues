@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.UI.viewmodel
+package com.ameliok.newvenues.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

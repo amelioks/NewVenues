@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.UI
+package com.ameliok.newvenues.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

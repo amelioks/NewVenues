@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 
 class SharedPreferenceHelper(private val context: Context) {
-    val SHARED_PREFS = "sharedPrefs"
+    private val SHARED_PREFS = "sharedPrefs"
 
     val sharedPreferences: SharedPreferences = context.getSharedPreferences(
         SHARED_PREFS,
@@ -18,7 +18,7 @@ class SharedPreferenceHelper(private val context: Context) {
         }
 
     companion object {
-        const val KEY_STATE = "pref_key_last_state"
+        const val KEY_STATE = "pref_key_favourited_ids"
     }
 
 }

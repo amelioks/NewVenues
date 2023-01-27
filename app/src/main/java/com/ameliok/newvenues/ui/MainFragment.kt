@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.UI
+package com.ameliok.newvenues.ui
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -12,10 +12,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ameliok.newvenues.UI.recyclerview.GetRestaurantAdapter
-import com.ameliok.newvenues.UI.viewmodel.RestaurantVenueViewModel
-import com.ameliok.newvenues.UI.viewmodel.RestaurantVenueViewModelFactory
+import com.ameliok.newvenues.ui.recyclerview.GetRestaurantAdapter
+import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModel
+import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModelFactory
 import com.ameliok.newvenues.data.RestaurantRepository
+import com.ameliok.newvenues.data.SharedPreferenceHelper
 import com.ameliok.newvenues.databinding.FragmentMainScreenBinding
 import com.ameliok.newvenues.data.service.ServiceBuilder
 import com.ameliok.newvenues.data.service.WoltVenueService
@@ -32,11 +33,11 @@ class MainFragment : Fragment() {
         )
     }
 
-    private val adapter = GetRestaurantAdapter()
+    private lateinit var adapter: GetRestaurantAdapter
     private var _binding: FragmentMainScreenBinding? = null
     private val binding get() = _binding!!
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private val REQUEST_LOCATION = 1
+    private val requestLocation = 1
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,6 +50,8 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val sharedPreference = SharedPreferenceHelper(requireActivity().applicationContext)
+        adapter = GetRestaurantAdapter(sharedPreference)
         observeViewModel()
         setupView()
     }
@@ -74,7 +77,7 @@ class MainFragment : Fragment() {
         } else {
             requestPermissions(
                 arrayOf<String>(Manifest.permission.ACCESS_FINE_LOCATION),
-                REQUEST_LOCATION
+                requestLocation
             )
         }
     }
@@ -90,7 +93,7 @@ class MainFragment : Fragment() {
                         location.longitude
                     )
                 } else {
-                    Toast.makeText(context, "Location not found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Location not found", Toast.LENGTH_SHORT).show()
                 }
             }
     }
@@ -102,7 +105,7 @@ class MainFragment : Fragment() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
-            REQUEST_LOCATION -> {
+            requestLocation -> {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.isNotEmpty()
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED
@@ -118,8 +121,6 @@ class MainFragment : Fragment() {
             }
         }
     }
-
-
 
     override fun onDestroy() {
         super.onDestroy()

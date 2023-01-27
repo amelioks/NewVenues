@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.UI.viewmodel
+package com.ameliok.newvenues.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -20,7 +20,7 @@ class RestaurantVenueViewModel(
         getRestaurants()
     }
 
-    fun getRestaurants() = viewModelScope.launch {
+    private fun getRestaurants() = viewModelScope.launch {
         _getRestaurantResult.value = repository.getRestaurant(60.170187, 24.930599)
     }
 
