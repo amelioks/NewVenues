@@ -39,7 +39,6 @@ class GetRestaurantViewHolder(
         }
     }
 
-
     private fun setImageResource(imageView: ImageView, isFavorited: Boolean) {
         if (isFavorited) imageView.setImageResource(R.drawable.baseline_favorite_black_20)
         else imageView.setImageResource(R.drawable.baseline_favorite_border_black_20)

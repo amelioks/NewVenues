@@ -7,10 +7,7 @@
         android:id="@+id/restaurant_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/spacing_8dp"
-        android:layout_marginVertical="@dimen/spacing_8dp"
-        app:cardCornerRadius="@dimen/spacing_4dp"
-        app:cardElevation="@dimen/spacing_4dp">
+        app:cardCornerRadius="@dimen/spacing_4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,8 +25,8 @@
                 tools:src="@drawable/ic_launcher_background" />
 
             <LinearLayout
-                android:layout_width="214dp"
-                android:layout_height="wrap_content"
+                android:layout_width="227dp"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
@@ -40,6 +37,8 @@
                     android:layout_marginTop="25dp"
                     android:layout_marginEnd="18dp"
                     android:fontFamily="@font/roboto"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
                     android:textSize="14sp"
                     tools:text="Restaurant ABC" />
 
@@ -59,11 +58,11 @@
 
             <ImageView
                 android:id="@+id/imageView_favoriteIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="20dp"
+                android:layout_height="16.35dp"
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="35.5dp"
-                android:layout_marginEnd="36.15dp"
+                android:layout_marginEnd="18dp"
                 android:layout_marginBottom="36.15dp"
                 android:src="@drawable/baseline_favorite_border_black_20" />
 
