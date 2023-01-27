@@ -1,10 +1,10 @@
-package com.ameliok.newvenues.UI
+package com.ameliok.newvenues.UI.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ameliok.newvenues.domain.RestaurantRepository
+import com.ameliok.newvenues.data.RestaurantRepository
 import com.ameliok.newvenues.data.model.Item
 import kotlinx.coroutines.launch
 

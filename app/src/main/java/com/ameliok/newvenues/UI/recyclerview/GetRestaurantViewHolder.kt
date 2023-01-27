@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.UI
+package com.ameliok.newvenues.UI.recyclerview
 
 
 import androidx.recyclerview.widget.RecyclerView

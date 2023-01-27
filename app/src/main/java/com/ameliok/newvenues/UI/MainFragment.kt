@@ -12,7 +12,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ameliok.newvenues.domain.RestaurantRepository
+import com.ameliok.newvenues.UI.recyclerview.GetRestaurantAdapter
+import com.ameliok.newvenues.UI.viewmodel.RestaurantVenueViewModel
+import com.ameliok.newvenues.UI.viewmodel.RestaurantVenueViewModelFactory
+import com.ameliok.newvenues.data.RestaurantRepository
 import com.ameliok.newvenues.databinding.FragmentMainScreenBinding
 import com.ameliok.newvenues.data.service.ServiceBuilder
 import com.ameliok.newvenues.data.service.WoltVenueService

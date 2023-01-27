@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.domain
+package com.ameliok.newvenues.data
 
 import com.ameliok.newvenues.data.model.Item
 import com.ameliok.newvenues.data.service.WoltVenueService

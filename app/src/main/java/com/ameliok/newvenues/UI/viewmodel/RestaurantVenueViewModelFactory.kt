@@ -1,8 +1,8 @@
-package com.ameliok.newvenues.UI
+package com.ameliok.newvenues.UI.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.ameliok.newvenues.domain.RestaurantRepository
+import com.ameliok.newvenues.data.RestaurantRepository
 
 class RestaurantVenueViewModelFactory(
     private val repository: RestaurantRepository
