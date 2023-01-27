@@ -8,16 +8,20 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="328dp"
+        android:layout_height="36dp"
         android:background="@color/white"
+        android:lineSpacingExtra="-4sp"
+        android:gravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <TextView
             android:id="@+id/textView_title"
             android:text="New Venues"
-            style="@style/Toolbar.TitleText"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:textSize="32sp"
+            android:textColor="#202125"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
