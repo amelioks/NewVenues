@@ -15,18 +15,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ameliok.newvenues.ui.recyclerview.GetRestaurantAdapter
 import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModel
 import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModelFactory
-import com.ameliok.newvenues.data.RestaurantRepository
-import com.ameliok.newvenues.data.SharedPreferenceHelper
+import com.ameliok.newvenues.data.repository.RestaurantRepositoryImp
+import com.ameliok.newvenues.data.preference.SharedPreferenceHelper
 import com.ameliok.newvenues.databinding.FragmentMainScreenBinding
-import com.ameliok.newvenues.data.service.ServiceBuilder
-import com.ameliok.newvenues.data.service.WoltVenueService
+import com.ameliok.newvenues.data.api.service.ServiceBuilder
+import com.ameliok.newvenues.data.api.service.WoltVenueService
 import com.ameliok.newvenues.fineAndCoarseLocationPermissionGranted
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
 
 class MainFragment : Fragment() {
-    private val repository = RestaurantRepository(ServiceBuilder(WoltVenueService::class.java))
+    private val repository = RestaurantRepositoryImp(ServiceBuilder(WoltVenueService::class.java))
     private val viewModel: RestaurantVenueViewModel by viewModels {
         RestaurantVenueViewModelFactory(
             repository

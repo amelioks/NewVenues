@@ -4,10 +4,10 @@ package com.ameliok.newvenues.ui.recyclerview
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.ameliok.newvenues.R
-import com.ameliok.newvenues.data.SharedPreferenceHelper
-import com.ameliok.newvenues.data.model.Item
+import com.ameliok.newvenues.data.preference.SharedPreferenceHelper
+import com.ameliok.newvenues.data.api.model.Item
 import com.ameliok.newvenues.databinding.RestaurantListBinding
-import com.ameliok.newvenues.setImageUrl
+import com.ameliok.newvenues.data.api.service.setImageUrl
 
 class GetRestaurantViewHolder(
     private val binding: RestaurantListBinding,
