@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ameliok.newvenues.data.api.model.Item
+import com.ameliok.newvenues.domain.model.Item
 import com.ameliok.newvenues.domain.repository.RestaurantRepository
 import kotlinx.coroutines.launch
 

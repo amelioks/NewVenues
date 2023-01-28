@@ -6,7 +6,7 @@ import android.content.SharedPreferences
 class SharedPreferenceHelper(private val context: Context) {
     private val SHARED_PREFS = "sharedPrefs"
 
-    val sharedPreferences: SharedPreferences = context.getSharedPreferences(
+    private val sharedPreferences: SharedPreferences = context.getSharedPreferences(
         SHARED_PREFS,
         Context.MODE_PRIVATE
     )

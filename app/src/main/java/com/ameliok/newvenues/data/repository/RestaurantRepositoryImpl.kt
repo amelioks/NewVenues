@@ -1,32 +1,35 @@
 package com.ameliok.newvenues.data.repository
 
-import com.ameliok.newvenues.data.api.model.Item
+import com.ameliok.newvenues.domain.model.Item
 import com.ameliok.newvenues.data.api.service.WoltVenueService
 import com.ameliok.newvenues.data.preference.SharedPreferenceHelper
 import com.ameliok.newvenues.domain.repository.RestaurantRepository
+import com.ameliok.newvenues.utils.toDomainItem
 
 class RestaurantRepositoryImpl(
     private val service: WoltVenueService,
     private val sharedPreferenceHelper: SharedPreferenceHelper
 ) : RestaurantRepository {
-    override suspend fun getRestaurant(
+    override fun getRestaurant(
         lat: Double,
         lon: Double
     ): List<Item> {
-        return service.getWoltVenue(lat, lon).sections[1].items.take(15)
+        return service.getWoltVenue(lat, lon).sections[1].items.take(15).map{
+            it.toDomainItem()
+        }
     }
 
-    override suspend fun saveFavoriteRestaurant(id: String) {
+    override fun saveFavoriteRestaurant(id: String) {
         sharedPreferenceHelper.favoriteVenuesIds =
             sharedPreferenceHelper.favoriteVenuesIds.plus(id)
     }
 
-    override suspend fun removeFavoriteRestaurant(id: String) {
+    override fun removeFavoriteRestaurant(id: String) {
         sharedPreferenceHelper.favoriteVenuesIds =
             sharedPreferenceHelper.favoriteVenuesIds.minus(id)
     }
 
-    override suspend fun isFavoriteRestaurant(id: String): Boolean {
+    override fun isFavoriteRestaurant(id: String): Boolean {
         return sharedPreferenceHelper.favoriteVenuesIds.contains(id)
     }
 

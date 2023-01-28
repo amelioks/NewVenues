@@ -7,7 +7,7 @@ import retrofit2.http.Query
 interface WoltVenueService {
 
     @GET("v1/pages/restaurants")
-    suspend fun getWoltVenue(
+    fun getWoltVenue(
         @Query("lat") lat: Double,
         @Query("lon") lon: Double
     ) : GetRestaurantsResponse

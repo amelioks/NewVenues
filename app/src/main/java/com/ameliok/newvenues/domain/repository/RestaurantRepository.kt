@@ -1,6 +1,6 @@
 package com.ameliok.newvenues.domain.repository
 
-import com.ameliok.newvenues.data.api.model.Item
+import com.ameliok.newvenues.domain.model.Item
 
 interface RestaurantRepository {
     fun getRestaurant(

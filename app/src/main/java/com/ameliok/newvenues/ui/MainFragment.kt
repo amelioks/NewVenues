@@ -15,24 +15,31 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ameliok.newvenues.ui.recyclerview.GetRestaurantAdapter
 import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModel
 import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModelFactory
-import com.ameliok.newvenues.data.repository.RestaurantRepositoryImp
 import com.ameliok.newvenues.data.preference.SharedPreferenceHelper
 import com.ameliok.newvenues.databinding.FragmentMainScreenBinding
 import com.ameliok.newvenues.data.api.service.ServiceBuilder
 import com.ameliok.newvenues.data.api.service.WoltVenueService
-import com.ameliok.newvenues.fineAndCoarseLocationPermissionGranted
+import com.ameliok.newvenues.data.repository.RestaurantRepositoryImpl
+import com.ameliok.newvenues.domain.repository.RestaurantRepository
+import com.ameliok.newvenues.utils.fineAndCoarseLocationPermissionGranted
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
 
 class MainFragment : Fragment() {
-    private val repository = RestaurantRepositoryImp(ServiceBuilder(WoltVenueService::class.java))
+    private val repository: RestaurantRepository by lazy {
+        RestaurantRepositoryImpl(
+            ServiceBuilder(WoltVenueService::class.java),
+            sharedPreference
+        )
+    }
     private val viewModel: RestaurantVenueViewModel by viewModels {
         RestaurantVenueViewModelFactory(
             repository
         )
     }
 
+    private val sharedPreference = SharedPreferenceHelper(requireActivity().applicationContext)
     private lateinit var adapter: GetRestaurantAdapter
     private var _binding: FragmentMainScreenBinding? = null
     private val binding get() = _binding!!
@@ -50,8 +57,7 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val sharedPreference = SharedPreferenceHelper(requireActivity().applicationContext)
-        adapter = GetRestaurantAdapter(sharedPreference)
+        adapter = GetRestaurantAdapter(repository)
         observeViewModel()
         setupView()
     }
