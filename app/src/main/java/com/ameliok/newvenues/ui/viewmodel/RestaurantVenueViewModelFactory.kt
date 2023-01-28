@@ -2,10 +2,10 @@ package com.ameliok.newvenues.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.ameliok.newvenues.data.repository.RestaurantRepositoryImpl
+import com.ameliok.newvenues.domain.repository.RestaurantRepository
 
 class RestaurantVenueViewModelFactory(
-    private val repository: RestaurantRepositoryImpl
+    private val repository: RestaurantRepository
     ): ViewModelProvider.Factory {
 
         @Suppress("UNCHECKED_CAST")

@@ -20,18 +20,15 @@ class GetRestaurantViewHolder(
             binding.textViewRestaurantName.text = restaurant?.name
             binding.textViewRestaurantDescription.text = restaurant?.short_description
             binding.imageViewRestaurant.setImageUrl(item.image.url)
-            item.isFavorite = repository.isFavoriteRestaurant(item.venue!!.id)
 
+            item.isFavorite = repository.isFavoriteRestaurant(item.venue!!.id)
             setImageResource(binding.imageViewFavoriteIcon, item.isFavorite)
 
             binding.imageViewFavoriteIcon.setOnClickListener {
                 item.isFavorite = !item.isFavorite
                 setImageResource(binding.imageViewFavoriteIcon, item.isFavorite)
-                if (item.isFavorite) {
-                    repository.saveFavoriteRestaurant(item.venue.id)
-                } else {
-                    repository.removeFavoriteRestaurant(item.venue.id)
-                }
+                if (item.isFavorite) repository.saveFavoriteRestaurant(item.venue.id)
+                else repository.removeFavoriteRestaurant(item.venue.id)
             }
         }
     }
