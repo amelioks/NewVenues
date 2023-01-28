@@ -12,7 +12,12 @@ interface RestaurantRepository {
         id: String
     )
 
+    suspend fun removeFavoriteRestaurant(
+        id: String
+    )
+
     suspend fun isFavoriteRestaurant(
         id: String
     ) : Boolean
+
 }
