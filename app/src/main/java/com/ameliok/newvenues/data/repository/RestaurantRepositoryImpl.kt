@@ -5,7 +5,7 @@ import com.ameliok.newvenues.data.api.service.WoltVenueService
 import com.ameliok.newvenues.data.preference.SharedPreferenceHelper
 import com.ameliok.newvenues.domain.repository.RestaurantRepository
 
-class RestaurantRepositoryImp(
+class RestaurantRepositoryImpl(
     private val service: WoltVenueService,
     private val sharedPreferenceHelper: SharedPreferenceHelper
 ) : RestaurantRepository {

@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ameliok.newvenues.data.repository.RestaurantRepositoryImp
+import com.ameliok.newvenues.data.repository.RestaurantRepositoryImpl
 import com.ameliok.newvenues.data.api.model.Item
 import kotlinx.coroutines.launch
 
 class RestaurantVenueViewModel(
-    private val repository: RestaurantRepositoryImp
+    private val repository: RestaurantRepositoryImpl
 ) : ViewModel() {
 
     private val _getRestaurantResult = MutableLiveData<List<Item>>()

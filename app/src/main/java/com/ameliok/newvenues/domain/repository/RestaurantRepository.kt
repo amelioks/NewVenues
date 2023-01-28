@@ -3,20 +3,20 @@ package com.ameliok.newvenues.domain.repository
 import com.ameliok.newvenues.data.api.model.Item
 
 interface RestaurantRepository {
-    suspend fun getRestaurant(
+    fun getRestaurant(
         lat: Double,
         lon: Double
     ): List<Item>
 
-    suspend fun saveFavoriteRestaurant(
+    fun saveFavoriteRestaurant(
         id: String
     )
 
-    suspend fun removeFavoriteRestaurant(
+    fun removeFavoriteRestaurant(
         id: String
     )
 
-    suspend fun isFavoriteRestaurant(
+    fun isFavoriteRestaurant(
         id: String
     ) : Boolean
 
