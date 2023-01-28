@@ -7,4 +7,12 @@ interface RestaurantRepository {
         lat: Double,
         lon: Double
     ): List<Item>
+
+    suspend fun saveFavoriteRestaurant(
+        id: String
+    )
+
+    suspend fun isFavoriteRestaurant(
+        id: String
+    ) : Boolean
 }
