@@ -1,4 +1,4 @@
-package com.ameliok.newvenues.data.api.service
+package com.ameliok.newvenues.utils
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide

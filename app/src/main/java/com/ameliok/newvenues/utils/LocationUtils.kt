@@ -1,4 +1,4 @@
-package com.ameliok.newvenues
+package com.ameliok.newvenues.utils
 
 import android.Manifest
 import android.annotation.TargetApi
