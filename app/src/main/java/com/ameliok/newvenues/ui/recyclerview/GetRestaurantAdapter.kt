@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.ameliok.newvenues.data.preference.SharedPreferenceHelper
-import com.ameliok.newvenues.data.api.model.Item
+import com.ameliok.newvenues.domain.model.Item
 import com.ameliok.newvenues.databinding.RestaurantListBinding
+import com.ameliok.newvenues.domain.repository.RestaurantRepository
 
 class GetRestaurantAdapter(
-    private val sharedPreferenceHelper: SharedPreferenceHelper
+    private val repository: RestaurantRepository
 )
     : ListAdapter<Item, GetRestaurantViewHolder>(DiffCallback) {
 
@@ -33,7 +33,7 @@ class GetRestaurantAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GetRestaurantViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = RestaurantListBinding.inflate(layoutInflater, parent, false)
-        return GetRestaurantViewHolder(binding, sharedPreferenceHelper)
+        return GetRestaurantViewHolder(binding, repository)
     }
 
 }
