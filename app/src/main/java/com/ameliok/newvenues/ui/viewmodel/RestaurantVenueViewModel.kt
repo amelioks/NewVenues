@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ameliok.newvenues.domain.model.Item
+import com.ameliok.newvenues.domain.model.ItemDomain
 import com.ameliok.newvenues.domain.repository.RestaurantRepository
 import kotlinx.coroutines.launch
 
@@ -12,8 +12,8 @@ class RestaurantVenueViewModel(
     private val repository: RestaurantRepository
 ) : ViewModel() {
 
-    private val _getRestaurantResult = MutableLiveData<List<Item>>()
-    val getRestaurantResult: LiveData<List<Item>>
+    private val _getRestaurantResult = MutableLiveData<List<ItemDomain>>()
+    val getRestaurantResult: LiveData<List<ItemDomain>>
         get() = _getRestaurantResult
 
     init {

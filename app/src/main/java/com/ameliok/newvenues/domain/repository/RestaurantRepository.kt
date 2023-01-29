@@ -1,12 +1,12 @@
 package com.ameliok.newvenues.domain.repository
 
-import com.ameliok.newvenues.domain.model.Item
+import com.ameliok.newvenues.domain.model.ItemDomain
 
 interface RestaurantRepository {
-    fun getRestaurant(
+    suspend fun getRestaurant(
         lat: Double,
         lon: Double
-    ): List<Item>
+    ): List<ItemDomain>
 
     fun saveFavoriteRestaurant(
         id: String

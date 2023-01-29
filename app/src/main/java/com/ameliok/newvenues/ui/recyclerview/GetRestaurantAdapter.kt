@@ -4,24 +4,24 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.ameliok.newvenues.domain.model.Item
+import com.ameliok.newvenues.domain.model.ItemDomain
 import com.ameliok.newvenues.databinding.RestaurantListBinding
 import com.ameliok.newvenues.domain.repository.RestaurantRepository
 
 class GetRestaurantAdapter(
     private val repository: RestaurantRepository
 )
-    : ListAdapter<Item, GetRestaurantViewHolder>(DiffCallback) {
+    : ListAdapter<ItemDomain, GetRestaurantViewHolder>(DiffCallback) {
 
-    companion object DiffCallback : DiffUtil.ItemCallback<Item>() {
-        override fun areItemsTheSame(oldItem: Item, newItem: Item): Boolean {
-            return oldItem.venue == newItem.venue
+    companion object DiffCallback : DiffUtil.ItemCallback<ItemDomain>() {
+        override fun areItemsTheSame(oldItemDomain: ItemDomain, newItemDomain: ItemDomain): Boolean {
+            return oldItemDomain.venueDomain == newItemDomain.venueDomain
         }
 
         override fun areContentsTheSame(
-            oldItem: Item, newItem: Item
+            oldItemDomain: ItemDomain, newItemDomain: ItemDomain
         ): Boolean {
-            return oldItem == newItem
+            return oldItemDomain == newItemDomain
         }
     }
 

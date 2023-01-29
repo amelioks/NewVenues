@@ -1,6 +1,6 @@
 package com.ameliok.newvenues.data.repository
 
-import com.ameliok.newvenues.domain.model.Item
+import com.ameliok.newvenues.domain.model.ItemDomain
 import com.ameliok.newvenues.data.api.service.WoltVenueService
 import com.ameliok.newvenues.data.preference.SharedPreferenceHelper
 import com.ameliok.newvenues.domain.repository.RestaurantRepository
@@ -10,10 +10,10 @@ class RestaurantRepositoryImpl(
     private val service: WoltVenueService,
     private val sharedPreferenceHelper: SharedPreferenceHelper
 ) : RestaurantRepository {
-    override fun getRestaurant(
+    override suspend fun getRestaurant(
         lat: Double,
         lon: Double
-    ): List<Item> {
+    ): List<ItemDomain> {
         return service.getWoltVenue(lat, lon).sections[1].items.take(15).map{
             it.toDomainItem()
         }
