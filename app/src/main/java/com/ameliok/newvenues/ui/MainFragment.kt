@@ -16,10 +16,10 @@ import com.ameliok.newvenues.ui.recyclerview.GetRestaurantAdapter
 import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModel
 import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModelFactory
 import com.ameliok.newvenues.data.preference.SharedPreferenceHelper
-import com.ameliok.newvenues.databinding.FragmentMainScreenBinding
 import com.ameliok.newvenues.data.api.service.ServiceBuilder
 import com.ameliok.newvenues.data.api.service.WoltVenueService
 import com.ameliok.newvenues.data.repository.RestaurantRepositoryImpl
+import com.ameliok.newvenues.databinding.FragmentMainBinding
 import com.ameliok.newvenues.domain.repository.RestaurantRepository
 import com.ameliok.newvenues.utils.fineAndCoarseLocationPermissionGranted
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -27,21 +27,16 @@ import com.google.android.gms.location.LocationServices
 
 
 class MainFragment : Fragment() {
-    private val repository: RestaurantRepository by lazy {
-        RestaurantRepositoryImpl(
-            ServiceBuilder(WoltVenueService::class.java),
-            sharedPreference
-        )
-    }
+    private lateinit var repository: RestaurantRepository
     private val viewModel: RestaurantVenueViewModel by viewModels {
         RestaurantVenueViewModelFactory(
             repository
         )
     }
 
-    private val sharedPreference = SharedPreferenceHelper(requireActivity().applicationContext)
+    private lateinit var sharedPreference: SharedPreferenceHelper
     private lateinit var adapter: GetRestaurantAdapter
-    private var _binding: FragmentMainScreenBinding? = null
+    private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private val requestLocation = 1
@@ -51,12 +46,17 @@ class MainFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMainScreenBinding.inflate(inflater, container, false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
         return _binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sharedPreference = SharedPreferenceHelper(requireActivity().applicationContext)
+        repository = RestaurantRepositoryImpl(
+                ServiceBuilder(WoltVenueService::class.java),
+                sharedPreference
+            )
         adapter = GetRestaurantAdapter(repository)
         observeViewModel()
         setupView()

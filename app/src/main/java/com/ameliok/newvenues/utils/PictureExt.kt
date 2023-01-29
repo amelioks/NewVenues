@@ -8,7 +8,6 @@ fun ImageView.setImageUrl(imgUrl: String?) {
 
     Glide.with(this)
         .load(imgUrl)
-        .override(600,200)
         .fitCenter()
         .into(this)
 }

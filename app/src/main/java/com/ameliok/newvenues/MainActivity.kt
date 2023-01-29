@@ -1,12 +1,20 @@
 package com.ameliok.newvenues
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ameliok.newvenues.R
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
+import com.ameliok.newvenues.ui.MainFragment
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        if (savedInstanceState == null) {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add<MainFragment>(R.id.fragmentContainerView)
+            }
+        }
     }
 }
