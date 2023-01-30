@@ -7,6 +7,7 @@ This app requires internet access.
 Optional: Location Access
 
 # Tools
+- JSONtoKotlin plugin to generate network models from JSON
 - Retrofit to enable network communication
 - Glide to display image from URL
 - Shared Preference to store favorite restaurants
