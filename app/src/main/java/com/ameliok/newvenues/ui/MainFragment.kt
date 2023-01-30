@@ -15,7 +15,6 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import com.ameliok.newvenues.R
 import com.ameliok.newvenues.ui.recyclerview.GetRestaurantAdapter
 import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModel
@@ -104,7 +103,7 @@ class MainFragment : Fragment() {
         fusedLocationClient.lastLocation
             .addOnSuccessListener { location: Location? ->
                 if (location != null) {
-                    viewModel.getRestaurantCurrentLocationData(
+                    viewModel.getRestaurantsFromLocation(
                         location.latitude,
                         location.longitude
                     )

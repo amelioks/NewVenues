@@ -17,18 +17,24 @@ class RestaurantVenueViewModel(
         get() = _getRestaurantResult
 
     init {
-        getRestaurants()
+        getDefaultRestaurants()
     }
 
-    private fun getRestaurants() = viewModelScope.launch {
-        _getRestaurantResult.value = repository.getRestaurant(60.170187, 24.930599)
+    private fun getDefaultRestaurants() {
+        getRestaurantsFromLocation(HELSINKI_LATITUDE, HELSINKI_LONGITUDE)
     }
 
-    fun getRestaurantCurrentLocationData(latitude: Double, longitude: Double) {
+
+    fun getRestaurantsFromLocation(latitude: Double, longitude: Double) {
         viewModelScope.launch {
             val result = repository.getRestaurant(latitude, longitude)
         _getRestaurantResult.value = result
         }
+    }
+
+    companion object {
+        const val HELSINKI_LATITUDE = 60.170187
+        const val HELSINKI_LONGITUDE = 24.930599
     }
 
 
