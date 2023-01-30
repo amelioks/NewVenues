@@ -17,11 +17,11 @@ class GetRestaurantViewHolder(
     fun bind(itemDomain: ItemDomain) {
         itemView.apply {
             val restaurant = itemDomain.venueDomain
-            binding.textViewRestaurantName.text = restaurant?.name
-            binding.textViewRestaurantDescription.text = restaurant?.short_description
+            binding.textViewRestaurantName.text = restaurant.name
+            binding.textViewRestaurantDescription.text = restaurant.short_description
             binding.imageViewRestaurant.setImageUrl(itemDomain.imageDomain.url)
 
-            itemDomain.isFavorite = repository.isFavoriteRestaurant(itemDomain.venueDomain!!.id)
+            itemDomain.isFavorite = repository.isFavoriteRestaurant(itemDomain.venueDomain.id)
             setImageResource(binding.imageViewFavoriteIcon, itemDomain.isFavorite)
 
             binding.imageViewFavoriteIcon.setOnClickListener {
