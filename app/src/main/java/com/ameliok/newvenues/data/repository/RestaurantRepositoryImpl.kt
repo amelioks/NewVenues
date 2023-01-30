@@ -14,7 +14,9 @@ class RestaurantRepositoryImpl(
         lat: Double,
         lon: Double
     ): List<ItemDomain> {
-        // todo explain why using sections[1]
+        // this function uses section in index 1 based on the JSON result. The section
+        // in index 0 is not something that this project look for. The section in
+        // index 1 is.
         return service.getWoltVenue(lat, lon).sections[1].items.take(15).map{
             it.toDomainItem()
         }

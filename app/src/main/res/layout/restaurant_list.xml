@@ -19,13 +19,17 @@
         tools:src="@drawable/ic_launcher_background" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_weight="10"
+        android:orientation="vertical"
+        >
 
         <TextView
             android:id="@+id/textView_restaurantName"
             style="@style/title_name"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/spacing_20dp"
             android:layout_marginStart="@dimen/spacing_16dp"
@@ -39,6 +43,8 @@
             android:id="@+id/textView_restaurantDescription"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/spacing_16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:layout_marginStart="@dimen/spacing_16dp"
             android:layout_marginTop="@dimen/spacing_2dp"
             android:layout_marginEnd="@dimen/spacing_18dp"
@@ -47,7 +53,7 @@
             android:gravity="top"
             android:textSize="@dimen/font_x12"
             android:translationY="-0.97sp"
-            tools:text="Food ABC" />
+            tools:text="Food ABCD KJDLDJDHDUDUDJDH DJUJDJDJDJBDJDJ" />
 
     </LinearLayout>
 
