@@ -11,7 +11,6 @@ val runningQOrLater = android.os.Build.VERSION.SDK_INT >=
 
 
 
-//Check if fine background location permission granted
 @TargetApi(29)
 fun Context.fineAndCoarseLocationPermissionGranted(): Boolean {
     val fineLocationGranted = ActivityCompat.checkSelfPermission(

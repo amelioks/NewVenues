@@ -75,7 +75,6 @@ class MainFragment : Fragment() {
         return binding.root
     }
 
-    // Checks if users have given their location and sets location enabled if so.
     @SuppressLint("MissingPermission")
     fun enableUserLocation() {
         if (requireContext().fineAndCoarseLocationPermissionGranted()) {
