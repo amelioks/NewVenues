@@ -32,16 +32,17 @@ import com.google.android.gms.location.LocationServices
 
 class MainFragment : Fragment() {
     private lateinit var repository: RestaurantRepository
+    private lateinit var sharedPreference: SharedPreferenceHelper
+    private lateinit var adapter: GetRestaurantAdapter
     private val viewModel: RestaurantVenueViewModel by viewModels {
         RestaurantVenueViewModelFactory(
             repository
         )
     }
 
-    private lateinit var sharedPreference: SharedPreferenceHelper
-    private lateinit var adapter: GetRestaurantAdapter
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
+
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private val requestLocation = 1
 
@@ -76,7 +77,7 @@ class MainFragment : Fragment() {
         binding.restaurantRecycler.adapter = adapter
         binding.restaurantRecycler.layoutManager = LinearLayoutManager(context)
 
-        val dividerItemDecoration = DividerItemDecoration(requireContext(), RecyclerView.VERTICAL)
+        val dividerItemDecoration = DividerItemDecoration(context, RecyclerView.VERTICAL)
         ResourcesCompat.getDrawable(resources, R.drawable.layer, null)
             ?.let { drawable -> dividerItemDecoration.setDrawable(drawable) }
         binding.restaurantRecycler.addItemDecoration(dividerItemDecoration)
@@ -87,9 +88,8 @@ class MainFragment : Fragment() {
 
     @SuppressLint("MissingPermission")
     fun enableUserLocation() {
-        if (requireContext().fineAndCoarseLocationPermissionGranted()) {
-
-        } else {
+        val isLocationPermissionGranted = requireContext().fineAndCoarseLocationPermissionGranted()
+        if (!isLocationPermissionGranted) {
             requestPermissions(
                 arrayOf<String>(Manifest.permission.ACCESS_FINE_LOCATION),
                 requestLocation
