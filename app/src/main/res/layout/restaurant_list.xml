@@ -1,72 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/restaurant_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:cardCornerRadius="@dimen/spacing_4dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/restaurant_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageView_restaurant"
-                android:layout_width="@dimen/spacing_56dp"
-                android:layout_height="@dimen/spacing_56dp"
-                android:layout_marginStart="@dimen/spacing_16dp"
-                android:layout_marginTop="@dimen/spacing_16dp"
-                android:layout_marginEnd="@dimen/spacing_16dp"
-                android:layout_marginBottom="@dimen/spacing_16dp"
-                tools:src="@drawable/ic_launcher_background" />
+    <ImageView
+        android:id="@+id/imageView_restaurant"
+        android:layout_width="@dimen/spacing_56dp"
+        android:layout_height="@dimen/spacing_56dp"
+        android:layout_marginStart="@dimen/spacing_16dp"
+        android:layout_marginTop="@dimen/spacing_16dp"
+        android:layout_marginEnd="@dimen/spacing_16dp"
+        android:layout_marginBottom="@dimen/spacing_16dp"
+        tools:src="@drawable/ic_launcher_background" />
 
-            <LinearLayout
-                android:layout_width="@dimen/spacing_227dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView_restaurantName"
-                    android:layout_width="@dimen/spacing_216dp"
-                    android:layout_height="@dimen/spacing_20dp"
-                    android:layout_marginStart="@dimen/spacing_16dp"
-                    android:layout_marginTop="@dimen/spacing_25dp"
-                    android:layout_marginEnd="@dimen/spacing_18dp"
-                    android:fontFamily="@font/roboto"
-                    style="@style/title_name"
-                    android:textSize="@dimen/font_x14"
-                    tools:text="Restaurant ABC" />
+        <TextView
+            android:id="@+id/textView_restaurantName"
+            style="@style/title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/spacing_20dp"
+            android:layout_marginStart="@dimen/spacing_16dp"
+            android:layout_marginTop="@dimen/spacing_25dp"
+            android:layout_marginEnd="@dimen/spacing_18dp"
+            android:fontFamily="@font/roboto"
+            android:textSize="@dimen/font_x14"
+            tools:text="Restaurant ABC" />
 
-                <TextView
-                    android:id="@+id/textView_restaurantDescription"
-                    android:layout_width="@dimen/spacing_216dp"
-                    android:layout_height="@dimen/spacing_16dp"
-                    android:layout_marginStart="@dimen/spacing_16dp"
-                    android:layout_marginTop="@dimen/spacing_2dp"
-                    android:layout_marginEnd="@dimen/spacing_18dp"
-                    android:layout_marginBottom="@dimen/spacing_25dp"
-                    android:translationY="-0.97sp"
-                    android:gravity="top"
-                    android:fontFamily="@font/roboto"
-                    android:textSize="@dimen/font_x12"
-                    tools:text="Food ABC" />
+        <TextView
+            android:id="@+id/textView_restaurantDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/spacing_16dp"
+            android:layout_marginStart="@dimen/spacing_16dp"
+            android:layout_marginTop="@dimen/spacing_2dp"
+            android:layout_marginEnd="@dimen/spacing_18dp"
+            android:layout_marginBottom="@dimen/spacing_25dp"
+            android:fontFamily="@font/roboto"
+            android:gravity="top"
+            android:textSize="@dimen/font_x12"
+            android:translationY="-0.97sp"
+            tools:text="Food ABC" />
 
-            </LinearLayout>
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imageView_favoriteIcon"
-                android:layout_width="@dimen/spacing_20dp"
-                android:layout_height="@dimen/spacing_16dp"
-                android:layout_marginStart="@dimen/spacing_56dp"
-                android:layout_marginTop="@dimen/spacing_36dp"
-                android:layout_marginBottom="@dimen/spacing_36dp"
-                android:src="@drawable/baseline_favorite_border_black_20" />
+    <View
+        android:layout_width="@dimen/spacing_0dp"
+        android:layout_height="@dimen/spacing_0dp"
+        android:layout_weight="1" />
 
-        </LinearLayout>
-        </androidx.cardview.widget.CardView>
-</layout>
+    <ImageView
+        android:id="@+id/imageView_favoriteIcon"
+        android:layout_width="@dimen/spacing_20dp"
+        android:layout_height="@dimen/spacing_16dp"
+        android:layout_marginTop="@dimen/spacing_36dp"
+        android:layout_marginEnd="@dimen/spacing_16dp"
+        android:layout_marginBottom="@dimen/spacing_36dp"
+        android:src="@drawable/baseline_favorite_border_black_20" />
+
+</LinearLayout>
