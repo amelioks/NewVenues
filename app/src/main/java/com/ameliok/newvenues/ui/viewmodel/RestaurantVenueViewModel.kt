@@ -28,7 +28,7 @@ class RestaurantVenueViewModel(
     fun getRestaurantsFromLocation(latitude: Double, longitude: Double) {
         viewModelScope.launch {
             val result = repository.getRestaurant(latitude, longitude)
-        _getRestaurantResult.value = result
+            _getRestaurantResult.value = result
         }
     }
 

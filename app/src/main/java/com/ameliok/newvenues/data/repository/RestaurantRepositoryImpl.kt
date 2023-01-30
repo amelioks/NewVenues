@@ -14,6 +14,7 @@ class RestaurantRepositoryImpl(
         lat: Double,
         lon: Double
     ): List<ItemDomain> {
+        // todo explain why using sections[1]
         return service.getWoltVenue(lat, lon).sections[1].items.take(15).map{
             it.toDomainItem()
         }
