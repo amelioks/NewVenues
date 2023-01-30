@@ -11,7 +11,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import com.ameliok.newvenues.R
 import com.ameliok.newvenues.ui.recyclerview.GetRestaurantAdapter
 import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModel
 import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModelFactory
@@ -71,6 +76,12 @@ class MainFragment : Fragment() {
     private fun setupView(): View {
         binding.restaurantRecycler.adapter = adapter
         binding.restaurantRecycler.layoutManager = LinearLayoutManager(context)
+
+        val dividerItemDecoration = DividerItemDecoration(requireContext(), RecyclerView.VERTICAL)
+        ResourcesCompat.getDrawable(resources, R.drawable.layer, null)
+            ?.let { drawable -> dividerItemDecoration.setDrawable(drawable) }
+        binding.restaurantRecycler.addItemDecoration(dividerItemDecoration)
+
         enableUserLocation()
         return binding.root
     }
