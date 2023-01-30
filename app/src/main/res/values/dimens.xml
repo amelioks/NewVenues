@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="spacing_0dp">0dp</dimen>
+    <dimen name="spacing_2dp">2dp</dimen>
     <dimen name="spacing_4dp">4dp</dimen>
-    <dimen name="spacing_8dp">8dp</dimen>
-    <dimen name="spacing_12dp">12dp</dimen>
+
     <dimen name="spacing_16dp">16dp</dimen>
+    <dimen name="spacing_18dp">18dp</dimen>
+    <dimen name="spacing_20dp">20dp</dimen>
+    <dimen name="spacing_25dp">25dp</dimen>
     <dimen name="spacing_36dp">36dp</dimen>
+    <dimen name="spacing_56dp">56dp</dimen>
+    <dimen name="spacing_216dp">216dp</dimen>
+    <dimen name="spacing_227dp">227dp</dimen>
     <dimen name="spacing_328dp">328dp</dimen>
 
+    <dimen name="font_x12">12sp</dimen>
     <dimen name="font_x14">14sp</dimen>
+
     <dimen name="font_x20">20sp</dimen>
     <dimen name="font_x24">24sp</dimen>
 

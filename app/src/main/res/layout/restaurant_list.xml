@@ -16,55 +16,54 @@
 
             <ImageView
                 android:id="@+id/imageView_restaurant"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_width="@dimen/spacing_56dp"
+                android:layout_height="@dimen/spacing_56dp"
+                android:layout_marginStart="@dimen/spacing_16dp"
+                android:layout_marginTop="@dimen/spacing_16dp"
+                android:layout_marginEnd="@dimen/spacing_16dp"
+                android:layout_marginBottom="@dimen/spacing_16dp"
                 tools:src="@drawable/ic_launcher_background" />
 
             <LinearLayout
-                android:layout_width="227dp"
+                android:layout_width="@dimen/spacing_227dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView_restaurantName"
-                    android:layout_width="216dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginEnd="18dp"
+                    android:layout_width="@dimen/spacing_216dp"
+                    android:layout_height="@dimen/spacing_20dp"
+                    android:layout_marginStart="@dimen/spacing_16dp"
+                    android:layout_marginTop="@dimen/spacing_25dp"
+                    android:layout_marginEnd="@dimen/spacing_18dp"
                     android:fontFamily="@font/roboto"
                     style="@style/title_name"
-                    android:textSize="14sp"
+                    android:textSize="@dimen/font_x14"
                     tools:text="Restaurant ABC" />
 
                 <TextView
                     android:id="@+id/textView_restaurantDescription"
-                    android:layout_width="216dp"
-                    android:layout_height="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginBottom="25dp"
+                    android:layout_width="@dimen/spacing_216dp"
+                    android:layout_height="@dimen/spacing_16dp"
+                    android:layout_marginStart="@dimen/spacing_16dp"
+                    android:layout_marginTop="@dimen/spacing_2dp"
+                    android:layout_marginEnd="@dimen/spacing_18dp"
+                    android:layout_marginBottom="@dimen/spacing_25dp"
                     android:translationY="-0.97sp"
                     android:gravity="top"
                     android:fontFamily="@font/roboto"
-                    android:textSize="12sp"
+                    android:textSize="@dimen/font_x12"
                     tools:text="Food ABC" />
 
             </LinearLayout>
 
             <ImageView
                 android:id="@+id/imageView_favoriteIcon"
-                android:layout_width="20dp"
-                android:layout_height="16.35dp"
-                android:layout_marginStart="18dp"
-                android:layout_marginTop="35.5dp"
-                android:layout_marginEnd="18dp"
-                android:layout_marginBottom="36.15dp"
+                android:layout_width="@dimen/spacing_20dp"
+                android:layout_height="@dimen/spacing_16dp"
+                android:layout_marginStart="@dimen/spacing_56dp"
+                android:layout_marginTop="@dimen/spacing_36dp"
+                android:layout_marginBottom="@dimen/spacing_36dp"
                 android:src="@drawable/baseline_favorite_border_black_20" />
 
 

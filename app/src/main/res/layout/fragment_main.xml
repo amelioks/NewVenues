@@ -28,8 +28,9 @@
             <TextView
                 android:id="@+id/textView_title"
                 android:text="@string/new_venues"
-                style="@style/TextAppearance.AppCompat.Headline"
                 android:textSize="@dimen/font_x32"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"
                 android:textColor="@color/gray"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -40,7 +41,7 @@
             android:id="@+id/restaurant_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/restaurant_list"/>
+            tools:listitem="@layout/restaurant_list" />
 
     </LinearLayout>
 
