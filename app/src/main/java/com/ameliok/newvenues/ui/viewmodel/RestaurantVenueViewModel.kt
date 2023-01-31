@@ -1,5 +1,6 @@
 package com.ameliok.newvenues.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,12 +17,11 @@ class RestaurantVenueViewModel(
     val getRestaurantResult: LiveData<List<ItemDomain>>
         get() = _getRestaurantResult
 
-    init {
-        getDefaultRestaurants()
-    }
 
-    private fun getDefaultRestaurants() {
+    fun getDefaultRestaurants() {
         getRestaurantsFromLocation(HELSINKI_LATITUDE, HELSINKI_LONGITUDE)
+        Log.d("Tag", "request getDefaultRestaurants done")
+
     }
 
 
@@ -29,6 +29,7 @@ class RestaurantVenueViewModel(
         viewModelScope.launch {
             val result = repository.getRestaurant(latitude, longitude)
             _getRestaurantResult.value = result
+            Log.d("Tag", "request getRestaurantsFromLocation done")
         }
     }
 

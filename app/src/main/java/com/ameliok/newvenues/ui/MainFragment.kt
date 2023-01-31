@@ -59,9 +59,9 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         sharedPreference = SharedPreferenceHelper(requireActivity().applicationContext)
         repository = RestaurantRepositoryImpl(
-                ServiceBuilder(WoltVenueService::class.java),
-                sharedPreference
-            )
+            ServiceBuilder(WoltVenueService::class.java),
+            sharedPreference
+        )
         adapter = GetRestaurantAdapter(repository)
         observeViewModel()
         setupView()
@@ -88,8 +88,10 @@ class MainFragment : Fragment() {
 
     @SuppressLint("MissingPermission")
     fun enableUserLocation() {
-        val isLocationPermissionGranted = requireContext().fineAndCoarseLocationPermissionGranted()
-        if (!isLocationPermissionGranted) {
+        if (requireContext().fineAndCoarseLocationPermissionGranted()) {
+            getRestaurantLocation()
+        } else {
+            viewModel.getDefaultRestaurants()
             requestPermissions(
                 arrayOf<String>(Manifest.permission.ACCESS_FINE_LOCATION),
                 requestLocation
