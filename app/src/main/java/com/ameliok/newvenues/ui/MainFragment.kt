@@ -5,40 +5,30 @@ import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ameliok.newvenues.R
+import com.ameliok.newvenues.databinding.FragmentMainBinding
 import com.ameliok.newvenues.ui.recyclerview.GetRestaurantAdapter
 import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModel
-import com.ameliok.newvenues.ui.viewmodel.RestaurantVenueViewModelFactory
-import com.ameliok.newvenues.data.preference.SharedPreferenceHelper
-import com.ameliok.newvenues.data.api.service.ServiceBuilder
-import com.ameliok.newvenues.data.api.service.WoltVenueService
-import com.ameliok.newvenues.data.repository.RestaurantRepositoryImpl
-import com.ameliok.newvenues.databinding.FragmentMainBinding
-import com.ameliok.newvenues.domain.repository.RestaurantRepository
 import com.ameliok.newvenues.utils.fineAndCoarseLocationPermissionGranted
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class MainFragment : Fragment() {
-    private lateinit var repository: RestaurantRepository
-    private lateinit var sharedPreference: SharedPreferenceHelper
-    private lateinit var adapter: GetRestaurantAdapter
-    private val viewModel: RestaurantVenueViewModel by viewModels {
-        RestaurantVenueViewModelFactory(
-            repository
-        )
-    }
+    @Inject lateinit var adapter: GetRestaurantAdapter
+    private val viewModel: RestaurantVenueViewModel by viewModels()
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
@@ -57,12 +47,12 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        sharedPreference = SharedPreferenceHelper(requireActivity().applicationContext)
-        repository = RestaurantRepositoryImpl(
-            ServiceBuilder(WoltVenueService::class.java),
-            sharedPreference
-        )
-        adapter = GetRestaurantAdapter(repository)
+//        sharedPreference = SharedPreferenceHelper(requireActivity().applicationContext)
+//        repository = RestaurantRepositoryImpl(
+//            ServiceBuilder(WoltVenueService::class.java),
+//            sharedPreference
+//        )
+//        adapter = GetRestaurantAdapter(repository)
         observeViewModel()
         setupView()
     }

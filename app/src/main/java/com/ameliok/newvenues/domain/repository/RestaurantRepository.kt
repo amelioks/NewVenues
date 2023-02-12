@@ -2,7 +2,8 @@ package com.ameliok.newvenues.domain.repository
 
 import com.ameliok.newvenues.domain.model.ItemDomain
 
-interface RestaurantRepository {
+interface
+RestaurantRepository {
     suspend fun getRestaurant(
         lat: Double,
         lon: Double

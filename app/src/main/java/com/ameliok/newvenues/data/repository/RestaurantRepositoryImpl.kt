@@ -5,6 +5,7 @@ import com.ameliok.newvenues.data.api.service.WoltVenueService
 import com.ameliok.newvenues.data.preference.SharedPreferenceHelper
 import com.ameliok.newvenues.domain.repository.RestaurantRepository
 import com.ameliok.newvenues.utils.toDomainItem
+import javax.inject.Inject
 
 class RestaurantRepositoryImpl(
     private val service: WoltVenueService,

@@ -7,9 +7,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ameliok.newvenues.domain.model.ItemDomain
 import com.ameliok.newvenues.domain.repository.RestaurantRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class RestaurantVenueViewModel(
+@HiltViewModel
+class RestaurantVenueViewModel @Inject constructor(
     private val repository: RestaurantRepository
 ) : ViewModel() {
 
