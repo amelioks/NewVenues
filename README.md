@@ -14,3 +14,4 @@ Optional: Location Access
 - RecyclerView to show list of restaurant
 - MVVM Architecture as the selected architecture pattern
 - Fused Location to enable user location access
+- Hilt to manage Dependency Injection
