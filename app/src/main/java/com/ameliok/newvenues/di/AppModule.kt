@@ -10,8 +10,6 @@ import com.ameliok.newvenues.ui.recyclerview.GetRestaurantAdapter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.android.components.FragmentComponent
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 
@@ -29,7 +27,8 @@ object AppModule {
     }
 
     @Provides
-    fun provideRestaurantRepository(woltVenueService: WoltVenueService,
+    fun provideRestaurantRepository(
+        woltVenueService: WoltVenueService,
         sharedPreferenceHelper: SharedPreferenceHelper
     ): RestaurantRepository {
         return RestaurantRepositoryImpl(
