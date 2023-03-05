@@ -25,6 +25,7 @@ import com.google.android.gms.location.LocationServices
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+
 @AndroidEntryPoint
 class MainFragment : Fragment() {
     @Inject lateinit var adapter: GetRestaurantAdapter
