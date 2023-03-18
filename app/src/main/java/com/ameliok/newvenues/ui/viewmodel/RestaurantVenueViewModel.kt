@@ -23,7 +23,7 @@ class RestaurantVenueViewModel @Inject constructor(
 
     fun getDefaultRestaurants() {
         getRestaurantsFromLocation(HELSINKI_LATITUDE, HELSINKI_LONGITUDE)
-        Log.d("Tag", "request getDefaultRestaurants done")
+//        Log.d("Tag", "request getDefaultRestaurants done")
 
     }
 
@@ -32,7 +32,7 @@ class RestaurantVenueViewModel @Inject constructor(
         viewModelScope.launch {
             val result = repository.getRestaurant(latitude, longitude)
             _getRestaurantResult.value = result
-            Log.d("Tag", "request getRestaurantsFromLocation done")
+//            Log.d("Tag", "request getRestaurantsFromLocation done")
         }
     }
 
