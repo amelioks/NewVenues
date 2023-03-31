@@ -56,6 +56,7 @@ class MainFragment : Fragment() {
 //        adapter = GetRestaurantAdapter(repository)
         observeViewModel()
         setupView()
+        enableUserLocation()
     }
 
     private fun observeViewModel() {
@@ -64,7 +65,7 @@ class MainFragment : Fragment() {
         }
     }
 
-    private fun setupView(): View {
+    private fun setupView() {
         binding.restaurantRecycler.adapter = adapter
         binding.restaurantRecycler.layoutManager = LinearLayoutManager(context)
 
@@ -72,9 +73,6 @@ class MainFragment : Fragment() {
         ResourcesCompat.getDrawable(resources, R.drawable.layer, null)
             ?.let { drawable -> dividerItemDecoration.setDrawable(drawable) }
         binding.restaurantRecycler.addItemDecoration(dividerItemDecoration)
-
-        enableUserLocation()
-        return binding.root
     }
 
     @SuppressLint("MissingPermission")
