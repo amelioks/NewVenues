@@ -8,6 +8,8 @@ import androidx.lifecycle.viewModelScope
 import com.ameliok.newvenues.domain.model.ItemDomain
 import com.ameliok.newvenues.domain.repository.RestaurantRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,9 +18,12 @@ class RestaurantVenueViewModel @Inject constructor(
     private val repository: RestaurantRepository
 ) : ViewModel() {
 
-    private val _getRestaurantResult = MutableLiveData<List<ItemDomain>>()
-    val getRestaurantResult: LiveData<List<ItemDomain>>
-        get() = _getRestaurantResult
+//    private val _getRestaurantResult = MutableLiveData<List<ItemDomain>>()
+//    val getRestaurantResult: LiveData<List<ItemDomain>>
+//        get() = _getRestaurantResult
+
+    private val _getRestaurantResult = MutableStateFlow<List<ItemDomain>>(emptyList())
+    val getRestaurantResult: StateFlow<List<ItemDomain>> = _getRestaurantResult
 
 
     fun getDefaultRestaurants() {
