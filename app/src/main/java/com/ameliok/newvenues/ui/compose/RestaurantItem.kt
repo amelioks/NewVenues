@@ -40,7 +40,8 @@ fun RestaurantItem(item: ItemDomain) {
             Text(
                 text = item.venueDomain.name,
                 maxLines = 1,
-                overflow = TextOverflow.Ellipsis
+                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.padding(top = 8.dp)
             )
             Text(
                 text = item.venueDomain.short_description,
