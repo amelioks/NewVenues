@@ -21,7 +21,7 @@ fun RestaurantItem(item: ItemDomain) {
 
     Row(
         modifier = Modifier
-            .background(Color.LightGray)
+            .background(Color.White)
             .fillMaxWidth(),
     ) {
         Box(modifier = Modifier
